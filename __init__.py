@@ -3,7 +3,7 @@ import pelican, re
 def init(pelican_object):
     global fa_prog, fa_replace
     # Search for :fa<type>-<icon>:, such as :fas-paw: or :fab-twitter:
-    pattern = r':fa(?P<type>[bsr])-(?P<icon>[a-z0-9_]+):'
+    pattern = r':fa(?P<type>[bsr])-(?P<icon>[a-z0-9_-]+):'
     fa_prog = re.compile(pattern)
     fa_replace = "<i class=\"fa\g<type> fa-\g<icon>\"></i>"
 
